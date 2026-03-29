@@ -13,6 +13,13 @@ export enum UserStatus {
   ACTIVE = 'active',
   INACTIVE = 'inactive',
 }
+
+export enum UserType {
+  SUPER_ADMIN = 'super_admin',
+  ADMIN = 'admin',
+  MANAGER = 'manager',
+  RETAILER = 'retailer',
+}
 @Entity('users')
 export class User {
   @PrimaryGeneratedColumn('uuid')
@@ -33,6 +40,9 @@ export class User {
 
   @Column({ type: 'varchar', length: 30, nullable: true })
   mobile?: string;
+
+  @Column({ type: 'enum', enum: UserType, default: UserType.SUPER_ADMIN })
+  type: UserType;
 
   @Column({ type: 'enum', enum: UserStatus, default: UserStatus.ACTIVE })
   status: UserStatus;

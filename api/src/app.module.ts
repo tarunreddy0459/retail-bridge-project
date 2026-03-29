@@ -5,6 +5,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UsersModule } from './users/users.module';
 import { SuperAdminModule } from './super_admin/super_admin.module';
+import { StoresModule } from './stores/stores.module';
+import { CategoriesModule } from './categories/categories.module';
+import { BrandsModule } from './brands/brands.module';
+import { ProductsModule } from './products/products.module';
+import { InventoryModule } from './inventory/inventory.module';
 
 @Module({
   imports: [
@@ -20,6 +25,11 @@ import { SuperAdminModule } from './super_admin/super_admin.module';
     }),
     UsersModule,
     SuperAdminModule,
+    StoresModule,
+    CategoriesModule,
+    BrandsModule,
+    ProductsModule,
+    InventoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],
